@@ -83,3 +83,10 @@ def list_fcgr(id, sequence, k):
     chaos = np.array(chaos)
     fcgr = chaos.flatten()
     np.savetxt('work/fcgrlist/%s.txt'%id, fcgr,fmt='%f',delimiter=',')  
+    
+    
+ def matrix_fcgr(id, sequence, k):
+    chaos = chaos_game_representation(probabilities(str(sequence), count_kmers(str(sequence), k), k), k)    
+
+    chaos = np.array(chaos)
+    np.savetxt('work/matrix_6/%s.txt'%id, chaos,fmt='%f',delimiter=' ') 
